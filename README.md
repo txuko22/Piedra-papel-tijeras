@@ -18,3 +18,7 @@ Estático: mientras que los jugadores deliberan las acciones que van realizar, n
 
 Discreto: hay número finito de posibilidades a realizar.
 
+# Estrutura del agente
+Nuestro agente va a crear una lista en la que va a guardar un registro de los movimientos realizados por el usuario, para así posteriormente mediante el tratamiento de esos datos, elegir la opción más adecuada para poder llegar al objetivo, ganar la partida.
+
+![Modelo inteligencia artificial](./doc/IA_modelo.png)
