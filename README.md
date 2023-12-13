@@ -2,9 +2,9 @@
 Práctica del curso de especialización de IA y Big Data - IES de Teis (Bruno Álvarez Darriba)
 
 # Contorno de tarefas
-Contorno de tarefas | Observable| Axentes | Determinista | Episódico | Estático | Discreto |
+Contorno de tarefas | Observable| Axentes | Determinista | Episódico | Estático | Discreto 
 :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
- RPS | Parcialmente observable | Multiagente | Determinista | Episódico | Estático | Discreto |
+ RPS | Parcialmente observable | Multiagente | Determinista | Episódico | Estático | Discreto 
 
  Parcialmente observable: debido a que a la hora de llevar a cabo la acción, no contamos con la visión total del entorno del juego. Es decir, no contamos con información acerca del adversario hasta que no realiza su acción de sacar una de las 3 posibilidades.
 
@@ -18,7 +18,7 @@ Estático: mientras que los jugadores deliberan las acciones que van realizar, n
 
 Discreto: hay número finito de posibilidades a realizar.
 
-# Estrutura del agente
+## Estrutura del agente
 Nuestro agente va a crear una lista en la que va a guardar un registro de los movimientos realizados por el usuario, para así posteriormente mediante el tratamiento de esos datos, elegir la opción más adecuada para poder llegar al objetivo, ganar la partida.
 
 ![Modelo inteligencia artificial](./doc/IA_modelo.png)
