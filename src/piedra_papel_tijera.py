@@ -64,8 +64,17 @@ def get_computer_action(lista_acciones_usuario, n):
         computer_action = GameAction(0)
     else:
         new_user_action = Counter(lista_acciones_usuario)
-        action_final = max(new_user_action, key=lambda x: new_user_action[x])
-        computer_action = Victories[action_final]
+
+        n_rocks = new_user_action[GameAction(0)]
+        n_papers = new_user_action[GameAction(1)]
+        n_scissors = new_user_action[GameAction(2)]
+
+        if n_rocks == n_papers or n_rocks == n_scissors or n_papers == n_scissors:
+            prueba = lista_acciones_usuario[n - 1]
+        else:
+            prueba = new_user_action[GameAction(2)]
+            action_final = max(new_user_action, key=lambda x: new_user_action[x])
+            computer_action = Victories[action_final]
 
     print(f"Computer picked {computer_action.name}.")
 
