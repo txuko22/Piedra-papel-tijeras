@@ -59,10 +59,13 @@ def assess_game(user_action, computer_action):
     return game_result
 
 
-def get_computer_action(lista_acciones_usuario):
-    new_user_action = Counter(lista_acciones_usuario)
-    action_final = max(new_user_action, key=lambda x: new_user_action[x])
-    computer_action = Victories[action_final]
+def get_computer_action(lista_acciones_usuario, n):
+    if n == 1:
+        computer_action = GameAction(0)
+    else:
+        new_user_action = Counter(lista_acciones_usuario)
+        action_final = max(new_user_action, key=lambda x: new_user_action[x])
+        computer_action = Victories[action_final]
 
     print(f"Computer picked {computer_action.name}.")
 
@@ -96,7 +99,7 @@ def main():
             print(f"Invalid selection. Pick a choice in range {range_str}!")
             continue
 
-        computer_action = get_computer_action(lista_acciones_usuario)
+        computer_action = get_computer_action(lista_acciones_usuario, n)
         if assess_game(user_action, computer_action) == GameResult.Victory:
             victorias_totales += 1
 
