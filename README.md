@@ -47,3 +47,6 @@ En esta fase, se evalúa el resultado de cada ronda.
 Lo primero de todo fue añadir que el programa solicitase un número de partidas que se van a jugar. Después de eso, declaro un diccionario vacío en el que voy a ir guardando la opción que escoge el usuario y las veces que la escoge. 
 La estrategia a seguir es la siguiente: en la primera partida que se juega el programa siempre va a sacar piedra (hacemos que escoja una opción estática ya que sino en la primera partida el usuario siempre perdía), en las demás partidas el algoritmo se basa en escoger la opción contraria a la que más usa el usuario (la miramos en el diccionario ya que lo guardamos anteriormente). 
 Aparte de eso también llevamos la cuenta de las partidas ganadas respecto a las partidas jugadas para poder mirar el porcentaje de victoria del usuario.
+
+# Bibliografía
+- Inteligencia Artificial un enfoque moderno, 2da Ed (Stuart Russell y Peter Norvig)
