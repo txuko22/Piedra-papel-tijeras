@@ -59,14 +59,14 @@ def assess_game(user_action, computer_action):
     return game_result
 
 
-def get_computer_action(user_actions_list):
-    if not user_actions_list:
-        computer_selection = random.randint(0, len(GameAction) - 1)
-        computer_action = GameAction(computer_selection)
+def get_computer_action(lista_acciones_usuario, n):
+    if n == 1:
+        computer_action = GameAction(0)
     else:
-        new_user_action = Counter(user_actions_list)
+        new_user_action = Counter(lista_acciones_usuario)
         action_final = max(new_user_action, key=lambda x: new_user_action[x])
         computer_action = Victories[action_final]
+
     print(f"Computer picked {computer_action.name}.")
 
     return computer_action
@@ -82,28 +82,28 @@ def get_user_action():
     return user_action
 
 
-def play_another_round():
-    another_round = input("\nAnother round? (y/n): ")
-    return another_round.lower() == 'y'
-
-
 def main():
-    user_actions_list = []
-    while True:
+    lista_acciones_usuario = []
+    victorias_totales = 0
+
+    n_partidas = int(input('Enter the number of games you want to play: '))
+
+    n = 0
+    while n < n_partidas:
         try:
             user_action = get_user_action()
-            user_actions_list.append(user_action)
+            lista_acciones_usuario.append(user_action)
+            n += 1  
         except ValueError:
             range_str = f"[0, {len(GameAction) - 1}]"
             print(f"Invalid selection. Pick a choice in range {range_str}!")
             continue
 
-        computer_action = get_computer_action(user_actions_list)
-        assess_game(user_action, computer_action)
+        computer_action = get_computer_action(lista_acciones_usuario, n)
+        if assess_game(user_action, computer_action) == GameResult.Victory:
+            victorias_totales += 1
 
-        if not play_another_round():
-            break
-
+    print(f'Wins: {victorias_totales}')
 
 if __name__ == "__main__":
     main()
