@@ -48,5 +48,13 @@ Lo primero de todo fue añadir que el programa solicitase un número de partidas
 La estrategia a seguir es la siguiente: en la primera partida que se juega el programa siempre va a sacar piedra (hacemos que escoja una opción estática ya que sino en la primera partida el usuario siempre perdía), en las demás partidas el algoritmo se basa en escoger la opción contraria a la que más usa el usuario (la miramos en el diccionario ya que lo guardamos anteriormente). 
 Aparte de eso también llevamos la cuenta de las partidas ganadas respecto a las partidas jugadas para poder mirar el porcentaje de victoria del usuario.
 
+# Instalación y ejecución del proyecto
+- Creamos un nuevo entorno de trabajo que cuente con python 3.9 (ya que fue la versión usada para la producción y testeo del código):
+`conda create -n nombre_del_entorno python=3.9`
+- Nos situamos en el entorno creado:
+`conda activate nombre_del_entorno`
+- Instalamos las versiones de los paquetes presentes en el archivo de *requirements.txt*, mediante el comando: `pip install -r requirements.txt`
+- Ejecutamos el proyecto.
+
 # Bibliografía
 - Inteligencia Artificial un enfoque moderno, 2da Ed (Stuart Russell y Peter Norvig)
